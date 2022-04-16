@@ -173,6 +173,8 @@
         <a href="/ " class="underline "> 首页</a>
       </li><li class="menu-item">
         <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     
       <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
@@ -234,6 +236,30 @@
     <div class="btn" id="comments-btn">查看评论</div>
   
   
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk" class="gitalk"></div>
+<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  window.onload = function () {
+    var gitalk = new Gitalk({
+      clientID: '3c3fdbeb16942f03b7f7',
+      clientSecret: '8960998ac27220a983da6ecb3ab9e259907c7ea0',
+      id: window.location.pathname,
+      repo: 'fofish.github.io',
+      owner: 'fofish',
+      admin: 'fofish'
+    });
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        gitalk.render('gitalk');
+      });
+    } else {
+      gitalk.render('gitalk');
+    }
+  }
+</script>
+
 </section>
       
     </section>
